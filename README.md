@@ -8,7 +8,8 @@ The WHERE clause is applied before any grouping takes place and filters individu
 On the other hand, the HAVING clause is applied on GROUP BY clause.
 
 ### 13. Difference between DELETE and TRUNCATE?
-DELETE is used to delete the records from the table based on the condition whereas TRUNCATE is used to delete all the rows from the table.
+1. The basic difference in both is DELETE command is the DML command and the TRUNCATE command is DDL.
+2. DELETE command is used to delete a specific row from the table whereas the TRUNCATE command is used to remove all rows from the table.
 
 ### 14. Difference between CHAR and VARCHAR in SQL?
 CHAR is a fixed-length data type in SQL, meaning it will always occupy the exact number of characters specified, even if the actual value is shorter.
@@ -21,7 +22,26 @@ GROUP BY is used to group the records by one or more column.Basically group the 
 The DISTINCT keyword is used in to remove duplicate values from the result set of a SELECT query.
 
 ### 17. Aggregate Functions in SQL?
-AVG, SUM, MIN, MAX, COUNT
+1. AVG(): Returns the average value from specified columns.
+2. COUNT(): Returns the number of table rows.
+3. MAX(): Returns the largest value among the records.
+4. MIN(): Returns the smallest value among the records.
+5. SUM(): Returns the sum of specified column values.
+6. FIRST(): Returns the first value.
+7. LAST(): Returns last value.
+
+### 18. Constraints in SQL?
+There are 5 major constraints used in SQL, such as
+
+1. NOT NULL: That indicates that the column must have some value and cannot be left NULL.
+2. UNIQUE: This constraint is used to ensure that each row and column has a unique value and no value is being repeated in any other row or column.
+3. PRIMARY KEY: This constraint is used in association with NOT NULL and UNIQUE constraints such as on one or the combination of more than one column to identify the particular record with a unique identity.
+4. FOREIGN KEY: It is used to ensure the referential integrity of data in the table. It matches the value in one table with another using the PRIMARY KEY.
+
+### 18. Difference between DROP and TRUNCATE?
+TRUNCATE removes all rows from the table which cannot be retrieved back, DROP removes the entire table from the database and it also cannot be retrieved back.
+
+
 ### Employee Table
 | EMPID | EMPNAME    | SALARY  | AGE  | JOBNAME     | DOJ       | DEPTID |
 |-------|------------|---------|------|-------------|-----------|--------|
