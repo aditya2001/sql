@@ -64,22 +64,29 @@ select * from Employee OUTER JOIN DEPARTMENT ON Employee.DEPTID =Department.DEPT
 |`NULL` | `NULL`     | `NULL`  |`NULL`| `NULL`      | `NULL`   | 105    | `Admin`    | `Bhopal`     |
 
 
-#### Find count of employees by department id ->
+### Find count of employees by department id ->
 ```java
-select DEPTID, COUNT(*) from Employees GROUP BY DEPTID;
+select DEPTID, COUNT(*) from Employees GROUP BY DEPTID HAVING COUNT(*) > 1;
 ```
 
-#### Find max salary of employee ->
+### Find max salary of employee ->
 ```java
 select MAX(SALARY) from Employee;
 ```
 
-#### Find employee with 2nd highest salary
+### Find employee with 3rd highest salary
 ```java
-
+SELECT MAX(SALARY)
+FROM Employee
+WHERE Salary NOT IN (
+  SELECT TOP 2 SALARY
+  FROM Employees
+  ORDER BY SALARY DESC
+);
 ```
 
-#### Find average salary of employees in each department
+### Find average salary of employees in each department
 ```java
-
+select DEPTID, AVG(SALARY) from Employees GROUP BY DEPTID
 ```
+
