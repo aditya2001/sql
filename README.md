@@ -1,6 +1,27 @@
-# sql
+# SQL Interview Questions
 
+### 11. What is a subquery?
+Subquery is a query embedded inside another query.
 
+### 12. Difference between GROUP BY and HAVING clause?
+The WHERE clause is applied before any grouping takes place and filters individual rows.
+On the other hand, the HAVING clause is applied on GROUP BY clause.
+
+### 13. Difference between DELETE and TRUNCATE?
+DELETE is used to delete the records from the table based on the condition whereas TRUNCATE is used to delete all the rows from the table.
+
+### 14. Difference between CHAR and VARCHAR in SQL?
+CHAR is a fixed-length data type in SQL, meaning it will always occupy the exact number of characters specified, even if the actual value is shorter.
+Padding with spaces is done to meet the required length. On the other hand, VARCHAR is a variable-length data type. It stores only the number of characters that are used, without extra padding, making it more efficient for storing variable-length strings.
+
+### 15. Group By clause in SQL?
+GROUP BY is used to group the records by one or more column.Basically group the rows that share value in specified column.
+
+### 16. Distinct keyword in SQL?
+The DISTINCT keyword is used in to remove duplicate values from the result set of a SELECT query.
+
+### 17. Aggregate Functions in SQL?
+AVG, SUM, MIN, MAX, COUNT
 ### Employee Table
 | EMPID | EMPNAME    | SALARY  | AGE  | JOBNAME     | DOJ       | DEPTID |
 |-------|------------|---------|------|-------------|-----------|--------|
@@ -9,7 +30,7 @@
 | `3`   | `Divisha`  | `70000` | `2`  | `tester`    | 20012001  | 103    |
 | `4`   | `Madhu`    | `80000` | `1`  | `manager`   | 20012005  | 105    |
 
-### Employee Table
+### DEPARTMENT Table
 | DEPTID | DEPTNAME   | DEPTLOCATION | 
 |--------|------------|--------------|
 | `101`  | `Devops`   | `Bhopal`     | 
@@ -123,25 +144,9 @@ SELECT * FROM EMPLOYEES WHERE SALARY BETWEEN '50000' AND '100000';
 SELECT * FROM EMPLOYEES WHERE EMPNAME LIKE 'S%';
 ```
 
-### 11. What is a subquery?
-Subquery is a query embedded inside another query.
+### 14. Write a query to retrieve Departments who have less than 2 employees working in it.
+```java
+SELECT DEPTID, COUNT(EMPID) as 'EmpNo' FROM EMPLOYEES GROUP BY DEPTID HAVING COUNT(EMPID) < 2;
+```
 
-### 12. Difference between WHERE and GROUP BY clause?
-The WHERE clause is applied before any grouping takes place and filters individual rows.
-On the other hand, the HAVING clause is applied on GROUP BY clause.
 
-### 13. Difference between DELETE and TRUNCATE?
-DELETE is used to delete the records from the table based on the condition whereas TRUNCATE is used to delete all the rows from the table.
-
-### 14. Difference between CHAR and VARCHAR in SQL?
-CHAR is a fixed-length data type in SQL, meaning it will always occupy the exact number of characters specified, even if the actual value is shorter. 
-Padding with spaces is done to meet the required length. On the other hand, VARCHAR is a variable-length data type. It stores only the number of characters that are used, without extra padding, making it more efficient for storing variable-length strings.
-
-### 15. Group By clause in SQL?
-GROUP BY is used to group the records by one or more column.Basically group the rows that share value in specified column. 
-
-### 16. Distinct keyword in SQL?
-The DISTINCT keyword is used in to remove duplicate values from the result set of a SELECT query.
-
-### 17. Aggregate Functions in SQL?
-AVG, SUM, MIN, MAX, COUNT
