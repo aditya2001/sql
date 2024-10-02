@@ -69,6 +69,11 @@ select * from Employee OUTER JOIN DEPARTMENT ON Employee.DEPTID =Department.DEPT
 select DEPTID, COUNT(*) from Employees GROUP BY DEPTID HAVING COUNT(*) > 1;
 ```
 
+### 5. Find count of employees by department id who have age >20 ->
+```java
+select DEPTID, COUNT(*) from Employees WHERE AGE > 30 GROUP BY DEPTID;
+```
+
 ### 6. Find max salary of employee ->
 ```java
 select MAX(SALARY) from Employee;
@@ -95,4 +100,10 @@ select DEPTID, AVG(SALARY) from Employees GROUP BY DEPTID
 select TOP 3 DEPTID, AVG(SALARY) from Employees GROUP BY DEPTID ORDER BY AVG(SALARY) DESC;
 ```
 
-
+### 10. Find the department with max employees
+```java
+SELECT TOP 1 DEPTNAME, COUNT(*) AS MAX_EMPLOYEES
+FROM EMPLOYEES
+GROUP BY DEPTNAME
+ORDER BY COUNT(*) DESC;
+```
