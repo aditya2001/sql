@@ -1,11 +1,29 @@
 # SQL Interview Questions
 
-### 11. What is a subquery?
+### 1. SQL
+SQL stands for Structured Query Language. It is a language used to interact with the database.
+
+### 2. Types of SQL command?
+1. Data Definition Language (DDL) – to define and modify the structure of a database.
+   CREATE, ALTER TABLE, DROP, TRUNCATE
+2. Data Manipulation Language (DML) – to access, manipulate, and modify data in a database.
+   UPDATE, DELETE, and INSERT
+3. Data Control Language (DCL) – to control user access to the data in the database and give or revoke privileges to a specific user or a group of users.
+   GRANT and REVOKE
+
+### 1. What is a subquery?
 Subquery is a query embedded inside another query.
 
 ### 12. Difference between GROUP BY and HAVING clause?
 The WHERE clause is applied before any grouping takes place and filters individual rows.
 On the other hand, the HAVING clause is applied on GROUP BY clause.
+
+### 13. How to select common records between 2 tables?
+```java
+SELECT * FROM table_1
+INTERSECT
+SELECT * FROM table_1;
+```
 
 ### 13. Difference between DELETE and TRUNCATE?
 1. The basic difference in both is DELETE command is the DML command and the TRUNCATE command is DDL.
@@ -40,6 +58,13 @@ There are 5 major constraints used in SQL, such as
 
 ### 18. Difference between DROP and TRUNCATE?
 TRUNCATE removes all rows from the table which cannot be retrieved back, DROP removes the entire table from the database and it also cannot be retrieved back.
+
+### 19. How to use GROUP BY , ORDER BY together?
+
+WHERE -> GROUP BY -> HAVING -> ORDER BY
+1. The GROUP BY clause is placed after the WHERE clause.
+2. The GROUP BY clause is placed before the ORDER BY clause.
+3. GROUP BY goes before the ORDER BY statement because the latter operates on the final result of the query
 
 
 ### Employee Table
